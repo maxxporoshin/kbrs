@@ -1,0 +1,50 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <div class="body-content">
+        {% if user is not null %}
+            {% if role == 'admin' %}
+                <table class="admin-table">
+                    <tr>
+                        <th>Filename</th>
+                        <th>Users</th>
+                    </tr>
+                        {% for file in getFiles() %}
+                        <tr>
+                            <td>
+                                <div class="admin-table-filename">{{ file.name }}</div>
+                            </td>
+                            <td>
+                                <div class="admin-table-users">
+                                {% set users = getUsers() %}
+                                {% for u in users %}
+                                    {% if u.role != 'admin' %}
+                                        <label class="check-user-permission"><input type="checkbox"
+                                            {% if u in file.users %}checked{% endif %}
+                                        >{{ u.username }}</label>
+                                    {% endif %}
+                                {% endfor %}
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                </table>
+                <form action="{{ 'add_file' }}" method="post">
+                    <input type="text" name="filename" placeholder="Filename">
+                    <input type="submit">
+                </form>
+            {% else %}
+                <table class="user-table">
+                    <tr>
+                        <th>Filename</th>
+                    </tr>
+                    {% for file in getFiles() %}
+                        {% if user in file.users %}
+                            {{ file.name }}
+                        {% endif %}
+                    {% endfor %}
+                </table>
+            {% endif %}
+        {% endif %}
+    </div>
+{% endblock %}

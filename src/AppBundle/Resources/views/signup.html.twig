@@ -1,0 +1,14 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <div class="body-content">
+        <div class="auth-form">
+            <form action="{{ path('signup') }}" method="post">
+                <input type="text" name="username" placeholder="Username"><br>
+                <input type="password" name="password" placeholder="Password"><br>
+                <input type="password" name="confirm-password" placeholder="Confirm password"><br>
+                <input type="submit">
+            </form>
+        </div>
+    </div>
+{% endblock %}

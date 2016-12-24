@@ -1,0 +1,49 @@
+.header-content {
+    width: 900px;
+    margin: 0 auto;
+}
+.header-right {
+    float: right;
+}
+.header-home {
+    float: left;
+}
+.header-content:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.header-content h1 {
+    margin-bottom: 0;
+}
+.body-content {
+    width: 900px;
+    margin: 0 auto;
+}
+.auth-form {
+    width: 200px;
+    margin: 0 auto;
+}
+.admin-table {
+    border-collapse: collapse;
+}
+.admin-table tr {
+    border-bottom: 1px solid black;
+}
+.admin-table tr:last-child {
+    border-bottom: none;
+}
+.admin-table th {
+    text-align: left;
+}
+.admin-table-filename {
+    width: 150px;
+}
+.admin-table-users {
+    height: 60px;
+    width: 300px;
+    overflow-y: scroll;
+}
+.check-user-permission {
+    display: block;
+}
