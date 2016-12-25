@@ -29,6 +29,12 @@ class File
      */
     private $name;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="content", type="text", nullable=true)
+     */
+    private $content;
 
     /**
      * @ManyToMany(targetEntity="User", mappedBy="files")
@@ -67,6 +73,23 @@ class File
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getContent() {
+        return $this->content;
+    }
+
+    /**
+     * @param string
+     *
+     * @return File
+     */
+    public function setContent($content) {
+        $this->content = $content;
+        return $this;
     }
 
     /**

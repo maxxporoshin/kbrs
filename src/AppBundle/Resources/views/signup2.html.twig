@@ -1,0 +1,10 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <div class="body-content">
+        Your secret: <br>
+        <h1>{{ secret }}</h1>
+        <img src="{{ qr }}" alt="{{ qr }}"><br>
+        <a href="{{ path('homepage') }}"><h1>OK</h1></a>
+    </div>
+{% endblock %}

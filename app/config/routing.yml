@@ -7,12 +7,24 @@ homepage:
 login_page:
   path: /login
   defaults: { _controller: AppBundle:Default:loginPage }
+login2_page:
+  path: /login2
+  defaults: { _controller: AppBundle:Default:login2Page }
 signup_page:
   path: /signup
   defaults: { _controller: AppBundle:Default:signupPage }
+signup2_page:
+  path: /signup2
+  defaults: { _controller: AppBundle:Default:signup2Page }
+content_page:
+  path: /content
+  defaults: { _controller: AppBundle:Default:contentPage }
 login:
   path: /do_login
   defaults: { _controller: AppBundle:Default:login }
+login2:
+  path: /do_login2
+  defaults: { _controller: AppBundle:Default:login2 }
 signup:
   path: /do_signup
   defaults: { _controller: AppBundle:Default:signup }
@@ -25,3 +37,6 @@ add_file:
 check_user_permission:
   path: /check_user_permission
   defaults: { _controller: AppBundle:Default:checkUserPermission }
+update_local_storage:
+  path: /update_local_storage
+  defaults: { _controller: AppBundle:Default:updateLocalStorage }

@@ -45,6 +45,19 @@ class User
      */
     private $role;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="key", type="string", length=255)
+     */
+    private $key;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="secret", type="string", length=255)
+     */
+    private $secret;
 
     /**
      * @ManyToMany(targetEntity="File", inversedBy="users")
@@ -136,6 +149,42 @@ class User
     {
         return $this->role;
     }
+
+    /**
+     * @return string
+     */
+    public function getKey() {
+        return $this->key;
+    }
+
+    /**
+     * @param string
+     *
+     * @return User
+     */
+    public function setKey($key) {
+        $this->key = $key;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSecret()
+    {
+        return $this->secret;
+    }
+
+    /**
+     * @param string
+     * @return User
+     */
+    public function setSecret($secret)
+    {
+        $this->secret = $secret;
+        return $this;
+    }
+
 
     /**
      * @return \Doctrine\ORM\Mapping\Entity

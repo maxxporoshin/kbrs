@@ -1,5 +1,5 @@
 .header-content {
-    width: 900px;
+    width: 600px;
     margin: 0 auto;
 }
 .header-right {
@@ -17,7 +17,7 @@
     margin-bottom: 0;
 }
 .body-content {
-    width: 900px;
+    width: 600px;
     margin: 0 auto;
 }
 .auth-form {
@@ -40,7 +40,7 @@
     width: 150px;
 }
 .admin-table-users {
-    height: 60px;
+    height: 66px;
     width: 300px;
     overflow-y: scroll;
 }
